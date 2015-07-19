@@ -135,7 +135,8 @@ function checkStep(point){
     //console.log("POINT "+point);
     var gridPoint = grid[point];
     if(gridPoint == mineString){
-        console.log("DEAD");
+        console.log("\nOops..! Steped on a mine");
+        process.exit(0);
         return -1;
     }
     showWarnings(point);
@@ -191,5 +192,6 @@ function finishStat(myMines){
     console.log("MINES("+fmines.length+")       "+fmines.sort().toString());
     console.log("DISCOVERED("+discover.length+")  "+discover.sort().toString());
 
+    process.exit(0);
 
 }
